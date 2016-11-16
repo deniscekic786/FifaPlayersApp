@@ -2,10 +2,10 @@
 ASP.NET MVC 5 web application prototype
 
 #### Why?
-I Created this application prototype to demonstrate my understanding of creating apps using ASP.NET MVC 5. 
+I Created this application prototype to demonstrate my understanding of creating apps using ASP.NET MVC 5
 
 ####What is it?
-The application allows registered users to search Fifa 17 players with paging and sorting functionality.
+The application allows registered users to search Fifa 17 players with paging and sorting functionality
 
 ---
 

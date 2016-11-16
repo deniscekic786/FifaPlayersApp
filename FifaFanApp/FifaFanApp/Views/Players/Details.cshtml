@@ -1,0 +1,108 @@
+﻿@model FifaFanApp.Models.Player
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_PlayerSearchLayout.cshtml";
+
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Player</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Image.PlayerPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image.PlayerPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClubName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClubName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Position)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeakFootRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeakFootRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkillMovesRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SkillMovesRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinWorth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinWorth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxWorth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxWorth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Foot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Foot)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

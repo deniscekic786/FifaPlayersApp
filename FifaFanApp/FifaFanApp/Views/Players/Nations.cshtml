@@ -1,0 +1,30 @@
+﻿@model FifaFanApp.Models.FifaNation
+@{
+    ViewBag.Title = "Nations";
+    Layout = "~/Views/Shared/_PlayerSearchLayout.cshtml";
+
+}
+
+<h2>Nations</h2>
+
+@using (Html.BeginForm("Nations", "Players", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationMessage("Error", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.NationName, htmlAttributes: new { @class = "control-label col-md-4" })
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.NationName, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-8">
+            <input type="file" name="file" />
+        </div>
+    </div>
+                    <div class="form-group">
+                        <div class="col-md-8">
+                            <input type="submit" value="submit" />
+                        </div>
+                    </div>
+}

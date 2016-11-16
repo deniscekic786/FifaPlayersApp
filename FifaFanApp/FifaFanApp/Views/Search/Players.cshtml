@@ -1,0 +1,186 @@
+﻿@model List<FifaFanApp.Models.Player>
+@{
+    Layout = "~/Views/Shared/_PlayerSearchLayout.cshtml";
+}
+@using (Html.BeginForm("Players", "Search", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("pageNumber")
+    <div class="search-container">
+        <div style="margin-top: 20px;">
+            <div class="layout-container">
+                <div class="layout-sort-container">
+                    <div class="layout-sort-item">
+                        <div class="layout">
+                            <label for="sortBy">Sort by:</label>
+                            <select id="sortBy" name="sortBy">
+                                <option value="1">Highest Rated</option>
+                                <option value="2">Most Expensive</option>
+                                <option value="3">Fastest Player</option>
+                                <option value="4">Best Shooter</option>
+                                <option value="5">Best Dribbler</option>
+                                <option value="6">Best Defender</option>
+                                <option value="7">Strongest Player</option>
+                            </select>
+                        </div>
+                        <div class="results-container">
+                            <div class="row" style="margin-bottom: 20px;">
+                                <div class="container">
+                                    <div class="col-lg-4">
+                                        <ul class="list-unstyled">
+                                            <li>Pos = Position</li>
+                                            <li>Pac = Pace</li>
+                                            <li>Pas = Passing</li>
+                                        </ul>
+
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <ul class="list-unstyled">
+                                            <li>Sho = Shooting</li>
+                                            <li>Dri = Dribble</li>
+                                            <li>Def = Defense</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <ul class="list-unstyled">
+                                            <li>Phys = Physical</li>
+                                            <li>S/M = Skill Moves</li>
+                                            <li>W/F = Weak Foot</li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                          
+                            <table class="table table-striped table-tdc mb-20">
+                                <thead>
+                                <tr>
+                                    <th class="text-left">Player</th>
+                                    <th class="th-sort-results-sorted">Rating</th>
+                                    <th>Pos</th>
+                                    <th>Pac</th>
+                                    <th>Pas</th>
+                                    <th>Sho</th>
+                                    <th>Dri</th>
+                                    <th>Def</th>
+                                    <th>Phy</th>
+                                    <th>S/M</th>
+                                    <th>W/F</th>
+                                    <th>Foot</th>
+                                    <th>Min</th>
+                                    <th>Max</th>
+
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                @foreach (var player in Model)
+                                {
+                                    <tr>
+                                        <td class="text-left">
+                                            <div>
+                                                @*<a href='@Url.Action("Index", "Home")'>
+                                                    <img src='@Url.Content()' />
+                                                </a>*@
+                                                <img class="pull-left" src='@Url.Content(player.Image.PlayerPath)'/>
+                                                <img src="@Url.Content(player.Image.NationalityPath)" width="20" class="player-search-nation">
+                                                <strong>@player.Name</strong>
+                                                <br/>
+                                                <img src=@Url.Content(player.Image.ClubPath) width="20" class="player-search-nation">
+                                                @player.ClubName
+                                            </div>
+                                        </td>
+                                        <td class="td-sort-results">
+                                            <span class="label stat-label-if">@player.Rating.Overall</span>
+                                        </td>
+                                        <td>
+                                            ST
+                                        </td>
+
+                                        <td>
+                                            <span class="label stat-label-high" style="font-size: 14px; line-height: 16px;">@player.Rating.Pace</span>
+                                        </td>
+
+                                        <td>
+                                            <span class="label stat-label-low" style="font-size: 14px; line-height: 16px;">@player.Rating.Shooting</span>
+                                        </td>
+
+                                        <td>
+                                            <span class="label stat-label-lowest" style="font-size: 14px; line-height: 16px;">@player.Rating.Passing</span>
+                                        </td>
+
+
+                                        <td>
+                                            <span class="label stat-label-gold" style="font-size: 14px; line-height: 16px;">@player.Rating.Dribbling</span>
+                                        </td>
+
+                                        <td>
+                                            <span class="label stat-label-legend" style="font-size: 14px; line-height: 16px;">@player.Rating.Defense</span>
+                                        </td>
+
+                                        <td>
+                                            <span class="label" style="font-size: 14px; line-height: 16px;">@player.Rating.Physical</span>
+                                        </td>
+
+                                        <td>
+                                            @player.SkillMovesRating
+                                            <i class="glyphicon glyphicon-star-empty" style="font-size: 10px;"></i>
+                                        </td>
+
+                                        <td>
+                                            @player.WeakFootRating
+                                            <i class="glyphicon glyphicon-star-empty" style="font-size: 10px;"></i>
+                                        </td>
+                                        <td>
+                                            @player.Foot
+                                        </td>
+                                        <td>
+                                            <strong>@($"{player.MinWorth:c}")</strong>
+                                        </td>
+                                        <td>
+                                            <strong> @($"{player.MaxWorth:c}")</strong>
+                                        </td>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    @ViewBag.Pages
+                    <ul class="pagination">
+                        @for (var i = 1; i <= ViewBag.PageCount; i++)
+                        {
+                            <li>
+                                <a id="@("page" + i)" class="page" href="#">@i</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@Scripts.Render("~/bundles/jquery")
+
+<script type="text/javascript">
+    $(".page")
+        .on("click",
+            function() {
+                var pageNumber = $(this).text();
+                console.log(pageNumber);
+                $("#pageNumber").val(pageNumber);
+                $('form').submit();
+            });
+    $("#sortBy")
+        .on("change",
+            function() {
+                var resetPageNumber = 1;
+                $("#pageNumber").val(resetPageNumber);
+                $('form').submit();
+            });
+    var sortSelection = @ViewBag.sortBySelection;
+    $("#sortBy").val(sortSelection);
+    $("#page" + @ViewBag.PageNumber.ToString()).css("background-color", "#eeeeee");
+</script>

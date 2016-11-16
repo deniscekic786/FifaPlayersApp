@@ -1,0 +1,705 @@
+﻿body {
+    font-size: 14px;
+    font-family: Calibri,Tahoma,Helvetica,Arial,sans-serif;
+}
+
+.loginbody {
+    background: url(Images/stonebg.jpg) repeat;
+}
+/*universal*/
+.control-label {
+    padding-right: 0;
+}
+html, body, div, span, applet, object, iframe, h1, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#header {
+    width: 100%;
+    height: 60px;
+    background: #000;
+    border-bottom: 2px solid #328aa1;
+    position: relative;
+    z-index: 2;
+}
+
+.header-container {
+    width: 96%;
+    max-width: 1080px;
+    margin: 0 auto;
+    position: relative;
+}
+header h1 {
+    left: 35px;
+    top: -20px;
+    position: absolute;
+    width: 45%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.login {
+    right: 10px;
+    top: 10px;
+    position: absolute;
+    width: auto;
+    line-height: 28px;
+}
+
+    .login a {
+        display: inline-block;
+        position: relative;
+        line-height: 28px;
+        text-decoration: none;
+        text-align: center;
+        padding: 6px 10px 2px 10px;
+        text-transform: uppercase;
+        font-size: .875em;
+    }
+
+.user-login, .user-login:hover{
+    background: #2c96b5;
+    color: white;
+    border: 1px solid #2c96b5;
+    text-decoration: none;
+}
+
+
+#main {
+    height: 768px;
+    width: 100%;
+    min-height: 640px;
+    padding: 1em;
+    background: url(Images/fifa-17.jpg.optimal.jpg) no-repeat center;
+    background-size: cover;
+}
+
+
+#mobile-hero {
+    width: 100%;
+    height: 160px;
+    padding: 1em;
+    background: url(../images/modelo/modelo-mobile-bg.jpg) no-repeat top center;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+}
+
+    #mobile-hero h2 {
+        font-size: 28px;
+        padding-top: 110px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 600;
+        position: relative;
+        text-shadow: 0px 0px 4px #666;
+    }
+
+ 
+
+.homepage-container {
+    width: 96%;
+    max-width: 1080px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#copy-area {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    text-align: center;
+    margin-top: -100px;
+    width: 480px;
+}
+
+    #copy-area h2 {
+        font-size: 42px;
+        text-transform: uppercase;
+        line-height: 1.1;
+    }
+
+#regform-area {
+    margin: 10em 0 0;
+    max-width: 480px;
+    width: 65%;
+}
+
+.form {
+    background: #fff;
+    border-bottom: 10px solid #fab022;
+    overflow: visible;
+}
+
+    .form h3 {
+        display: block;
+        color: #222;
+        text-transform: uppercase;
+        font-size: 25px;
+        text-align: center;
+        font-weight: 600;
+        padding: 1em 0 .5em;
+        margin: 0 auto;
+    }
+    .form h3 span {
+    font-weight: bold;
+    color: #fab022;
+    font-size: 28px;
+}
+.registration {
+    border-top: 2px dotted #ccc;
+    width: 98%;
+    max-width: 320px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.registration-container {
+    width: 200%;
+}
+
+.registration-section {
+    width: 50%;
+    float: left;
+    padding: .6em;
+}
+
+
+
+
+#email {
+    width: 100%;
+    padding: .875em 0;
+}
+
+    #email input {
+        width: 100%;
+    }
+
+#password {
+    width: 100%;
+    padding: .875em 0;
+}
+
+    #password input {
+        width: 100%;
+    }
+
+#confirmPw {
+    width: 100%;
+    padding: .875em 0 1.5em;
+}
+
+#confirmPw input {
+        width: 100%;
+    }
+
+.dotted {
+    padding-bottom: 1em;
+    border-bottom: 2px dotted #ccc;
+}
+
+.tip {
+    font-size: .75em;
+    margin-top: 4px;
+    display: block;
+    padding-left: 4px;
+}
+
+.button {
+    display: block;
+    position: relative;
+    width: 220px;
+    height: 40px;
+    border: 3px solid #328aa1;
+    margin: 0 auto 1em;
+    text-align: center;
+    font-weight: 400;
+    color: #fff;
+    background: #328aa1;
+    text-decoration: none;
+    font-size: 1.25em;
+    line-height: 36px;
+    border-right: 0;
+}
+
+.button:hover{
+    text-decoration: none;
+     color: inherit;
+}
+.reg-form-submit {
+    display: inline-block;
+    margin: 0;
+    width: 210px;
+    position: relative;
+}
+.reg-form-submit:after {
+        content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 40px;
+        background: url(Images/button-end.png) no-repeat right center;
+    background-size: 20px 40px;
+}
+.ta-center {
+    text-align: center;
+}
+#regsubmit {
+    background-color: #328aa1;
+    color: white;
+    line-height: 30px;
+    width: 100%;
+    height: 40px;
+    font-weight: 400;
+    font-size: 1.25em;
+    border: 3px solid #328aa1;
+}
+    .nav-tabs, .nav-tabs:hover{
+            margin-right: 15px;
+background: none;
+    border: 1px solid #fbb024;
+    color: #fbb024;
+    border-radius: 0;
+    }
+
+.applogo {
+    background: url(Images/fifalogo.png);
+    display: block;
+    width: 100px;
+    height: 50px;
+    text-indent: -9999px; /* hides the link text */
+}
+
+.content-container {
+    margin: 0 auto;
+    width: 996px;
+}
+
+header .fancy-login {
+    padding-bottom: 0;
+}
+.fancy-login {
+        width: 996px;
+    margin: 0 auto;
+    padding: 1em 0;
+    color: white;
+}
+
+#logo {
+    margin: 6px 10px 10px 40px;
+}
+
+.left {
+    float: left;
+}
+
+.content {
+    width: 996px;
+    margin: 0 auto;
+    padding: 1em 0;
+    color: white;
+}
+
+#sidebg {
+    height: 544px;
+    width: 1200px;
+    padding: 0;
+    overflow: hidden;
+    background: #f3f4fa no-repeat cover center top;
+    box-shadow: 0 4px 8px #111;
+    position: relative;
+    transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+}
+
+.loginform {
+    overflow: hidden;
+    width: 415px;
+    height: 100%;
+    padding: 1em 0;
+    margin: 0;
+    color: #333;
+    background: url(Images/regform.png) repeat;
+    border-right: 2px solid #fff;
+    box-shadow: 0 2px 4px #333;
+}
+
+.loginform h2 {
+    color: #125672;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.content:before, .content:after {
+    content: "";
+    display: table;
+}
+
+form section {
+    display: block;
+    width: 90%;
+    margin: 0 auto 1.4em;
+    overflow: visible;
+    position: relative;
+}
+
+section {
+    width: 100%;
+    display: block;
+    clear: both;
+}
+
+.loginform section > label {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+form section label {
+    font-size: 16px;
+    display: block;
+}
+
+.loginform section .linput {
+    font-size: 16px;
+    padding: 16px 8px;
+        max-width: 100%;
+
+}
+
+form section .linput {
+          background-color: white;
+    outline: 0;
+    font-size: 14px;
+    height: 32px;
+    padding-top: 4px;
+    border: 0;
+    border: 1px solid #666;
+    border-radius: 2px;
+    color: #656565;
+    padding-left: .5em;
+    background: none;
+
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.2);
+    background-image: url('Images/blankinput.png');
+    background: url(Images/blankinput.png) no-repeat 98% #ffffff;
+    border: 1px solid #888888;
+    width: 95%;
+    border-radius: 3px;
+    line-height: 1.15em;
+    font-size: 1.15em;
+    padding: 0.5em;
+    color: #b8b8b8;
+}
+
+.loginform a.forgot {
+    margin: 6px 4px;
+    display: block;
+}
+
+.loginform a {
+    color: #328AA1;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:hover, input[type=submit]:hover, button {
+    cursor: pointer;
+}
+
+.loginform .logbutton {
+    font-size: 20px;
+    font-weight: bold;
+    max-width: 95%;
+    width: 100%;}
+
+.logbutton {
+    font-size: 0.75em;
+    text-shadow: -1px -1px 1px #444;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    vertical-align: middle;
+    border: 1px solid #0D5A72;
+    border-radius: 4px;
+    background: #289ABC;
+    background: url(../images/login/button-bg.png) repeat-x;
+    background: -moz-linear-gradient(top, #67C9DE, #2A9DC0 2px, #1F86A5 50%, #16718C);
+    background: -webkit-linear-gradient(top, #67C9DE, #2A9DC0 2px, #1F86A5 50%, #16718C);
+    background: -ms-linear-gradient(top, #67C9DE, #2A9DC0 2px, #1F86A5 50%, #16718C);
+}
+.persist-login {
+    margin: -10px auto 15px;
+    width: 180px;
+}
+#persist_login {
+    float: left;
+}
+
+.persist-login label {
+        margin-top: 7px;
+    display: inline-block;
+}
+.reglink {
+        text-align: center;
+    font-size: 16px;
+}
+.right {
+    float: right;
+}
+
+.middle {
+    text-align: center;
+}
+
+.text {
+        background-color: white;
+    outline: 0;
+    font-size: 14px;
+    height: 32px;
+    padding-top: 4px;
+    border: 0;
+    border: 1px solid #666;
+    border-radius: 2px;
+    color: #656565;
+    padding-left: .5em;
+    background: none;
+}
+
+.forgotpw-bg {
+    font-family: Arial,Helvetica,sans-serif;
+    width: 100%;
+    height: 100%;
+    background: url(Images/sccerbody-bg.jpg) no-repeat fixed;
+    background-size: cover;
+}
+
+
+
+main.forgot {
+    width: 500px;
+}
+main {
+    margin: 20px auto;
+}
+main {
+    position: relative;
+    margin: 60px auto;
+    width: 700px;
+}
+
+#forgot.active {
+    display: block;
+    height: 600px;
+}
+#forgot {
+    color: #fff;
+    display: block;
+    min-height: 0;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height 0.4s ease;
+}
+
+#error {
+    display: block;
+    min-height: 0;
+    -webkit-transition: all 0.4s ease;
+    box-shadow: none;
+}
+.notice {
+    padding: 10px;
+    max-width: 600px;
+}
+
+p.intro {
+     color: #fff;
+font-size: 18px;
+    line-height: 1.2;
+    margin: 0 0 40px;
+}
+.fpinput {
+    width: 100%;
+        max-width: 100%;
+    background: #fff;
+    border: 1px solid #d0d1d3;
+    border-radius: 3px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 16px;
+    overflow: hidden;
+    padding: 0 10px;
+}
+
+.search-container {
+    max-width: 970px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.layout-container {
+    width: 940px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.layout-sort-container {
+    flex: 0 0 auto;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.layout-sort-item {
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+}
+
+.layout {
+        border-color: #ccc;
+    color: #4d4d4d;
+    background: #fff;
+        border-top: none;
+            padding: 20px;
+    border: 1px solid;
+    border-radius: 0;
+}
+.results-container {
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    padding: 4px 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: middle;
+    border-top: 1px solid #dddddd;
+}
+
+.label {
+    border-radius: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    line-height: 26px;
+    font-size: 14px;
+    color: #fff;
+    background: #8bbe0b;
+}
+
+.stat-label-high {
+    background: #4eb800 !important;
+}
+.stat-label-lowest {
+    background: #850000 !important;
+}
+.stat-label-if {
+    background-color: #000 !important;
+}
+
+.stat-label-low {
+    background: #b14d00 !important;
+}
+.stat-label-medium {
+    background: #c99b00 !important;
+}
+.stat-label-gold {
+    background: #c8a037 !important;
+}
+#results .text-left {
+    width: 290px;
+}
+.table-striped tbody>tr:nth-child(odd)>td, .table-striped tbody>tr:nth-child(odd)>th {
+    background-color: #f9f9f9;
+}
+
+.stat-label-legend {
+    background: #fff !important;
+    border: 1px solid #6b4a15 !important;
+    color: #6b4a15 !important;
+}
+a.pagelink:hover, a.pagelink {
+     background-color: #eeeeee !important;
+}
+
+
+.about-bg {
+    background: url(Images/paperBg.jpg) repeat;
+}
+
+#contentWrapper {
+    padding-top: 50px;
+    width: 945px;
+    margin: 0 auto;
+    background: url(images/head.png) no-repeat 0 3%;
+    min-height: 768px;
+}
+
+#name-header {
+    width: 400px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    min-height: 100px;
+    background: url(Images/coollogo_com-65881272.png) no-repeat 0 0;
+    text-indent: -9999px;
+}
+
+
+
+#aboutText {
+        font-size: 62.5%;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#aboutMeSection dt {
+    color: #000000;
+    font-size: 24px;
+}
+
+#aboutMeSection dd {
+    color: #000000;
+    font-size:18px;
+    padding-bottom: 10px;
+}
+
+.contact-container {
+    margin: 0 auto;
+    width: 976px;
+}

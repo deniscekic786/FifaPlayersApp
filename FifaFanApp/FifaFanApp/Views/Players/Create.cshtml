@@ -1,0 +1,407 @@
+﻿@model FifaFanApp.Models.Player
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_PlayerSearchLayout.cshtml";
+
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("Create", "Players", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="container">
+            <div class="col-lg-3">
+                @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    <h4>Player</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Nationality, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Nationality, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Nationality, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ClubName, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.ClubName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ClubName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Position, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Position, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Position, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.WeakFootRating, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.WeakFootRating, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.WeakFootRating, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.SkillMovesRating, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.SkillMovesRating, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.SkillMovesRating, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MinWorth, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.MinWorth, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.MinWorth, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.MaxWorth, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.MaxWorth, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.MaxWorth, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Foot, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            @Html.EditorFor(model => model.Foot, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Foot, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-horizontal">
+                    <h4>Skills</h4>
+                    <hr />
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.BallControl, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.BallControl, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.BallControl, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Crossing, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Crossing, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Crossing, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Curve, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Curve, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Curve, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Dribbling, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Dribbling, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Dribbling, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Finishing, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Finishing, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Finishing, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.FreeKick, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.FreeKick, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.FreeKick, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.HeadingAccuracy, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.HeadingAccuracy, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.HeadingAccuracy, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.LongPassing, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.LongPassing, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.LongPassing, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.LongShots, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.LongShots, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.LongShots, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-horizontal">
+                    <h4>Skills</h4>
+                    <hr />
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Marking, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Marking, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Marking, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Penalties, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Penalties, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Penalties, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.ShortPassing, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.ShortPassing, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.ShortPassing, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.ShotPower, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.ShotPower, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.ShotPower, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.SlidingTackle, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.SlidingTackle, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.SlidingTackle, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.StandingTackle, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.StandingTackle, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.StandingTackle, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Volleys, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Volleys, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Volleys, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Acceleration, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Acceleration, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Acceleration, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Agility, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Agility, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Agility, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Balance, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Balance, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Balance, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-horizontal">
+                    <h4>Skills</h4>
+                    <hr />
+
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Jumping, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Jumping, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Jumping, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Reactions, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Reactions, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Reactions, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.SprintSpeed, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.SprintSpeed, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.SprintSpeed, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Strength, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Strength, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Strength, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Stamina, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Stamina, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Stamina, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Aggression, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Aggression, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Aggression, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Positioning, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Positioning, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Positioning, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Interceptions, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Interceptions, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Interceptions, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Skill.Vision, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model.Skill.Vision, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Skill.Vision, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container">
+
+                <div class="col-lg-5">
+                    <h4>Upload Player Image</h4>
+                    <hr />
+                    <div class="form-horizontal">
+                        <div class="upload-player-thumb">
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <input type="file" name="file" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-horizontal">
+                    <div class="col-lg-5">
+                        <h4>Create Player</h4>
+                        <hr />
+
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <input type="submit" value="Create" class="btn btn-lg btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

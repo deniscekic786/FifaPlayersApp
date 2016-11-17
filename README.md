@@ -29,7 +29,7 @@ The application allows registered users to search Fifa 17 players with paging an
 ---
 ####Core classes
 - [Resize & Process Images](https://github.com/deniscekic786/FifaPlayersApp/blob/master/FifaFanApp/FifaFanApp/BLL/ImageProcessor.cs)
-- [Player Rating Algorithm] ()
+- [Player Rating Algorithm] (https://github.com/deniscekic786/FifaPlayersApp/blob/master/FifaFanApp/FifaFanApp/BLL/FifaRatingAlgorithm.cs)
 
 
 
